@@ -1,0 +1,4 @@
+# From given Map.py
+numpy
+pandas
+pillow
