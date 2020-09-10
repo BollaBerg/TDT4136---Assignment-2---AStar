@@ -44,29 +44,29 @@ class Map_Obj():
         :return: Start position, Initial goal position, End goal position, path to map for current task.
         """
         if task == 1:
-            start_pos = [27, 18]
-            goal_pos = [40, 32]
+            start_pos = (27, 18)
+            goal_pos = (40, 32)
             end_goal_pos = goal_pos
             path_to_map = 'maps/Samfundet_map_1.csv'
         elif task == 2:
-            start_pos = [40, 32]
-            goal_pos = [8, 5]
+            start_pos = (40, 32)
+            goal_pos = (8, 5)
             end_goal_pos = goal_pos
             path_to_map = 'maps/Samfundet_map_1.csv'
         elif task == 3:
-            start_pos = [28, 32]
-            goal_pos = [6, 32]
+            start_pos = (28, 32)
+            goal_pos = (6, 32)
             end_goal_pos = goal_pos
             path_to_map = 'maps/Samfundet_map_2.csv'
         elif task == 4:
-            start_pos = [28, 32]
-            goal_pos = [6, 32]
+            start_pos = (28, 32)
+            goal_pos = (6, 32)
             end_goal_pos = goal_pos
             path_to_map = 'maps/Samfundet_map_Edgar_full.csv'
         elif task == 5:
-            start_pos = [14, 18]
-            goal_pos = [6, 36]
-            end_goal_pos = [6, 7]
+            start_pos = (14, 18)
+            goal_pos = (6, 36)
+            end_goal_pos = (6, 7)
             path_to_map = 'maps/Samfundet_map_2.csv'
 
 
@@ -119,13 +119,13 @@ class Map_Obj():
         :return: Next coordinates for the goal position.
         """
         if self.goal_pos[0] < self.end_goal_pos[0]:
-            return [self.goal_pos[0]+1, self.goal_pos[1]]
+            return (self.goal_pos[0]+1, self.goal_pos[1])
         elif self.goal_pos[0] > self.end_goal_pos[0]:
-            return [self.goal_pos[0]-1, self.goal_pos[1]]
+            return (self.goal_pos[0]-1, self.goal_pos[1])
         elif self.goal_pos[1] < self.end_goal_pos[1]:
-            return [self.goal_pos[0], self.goal_pos[1]+1]
+            return (self.goal_pos[0], self.goal_pos[1]+1)
         else:
-            return [self.goal_pos[0], self.goal_pos[1]-1]
+            return (self.goal_pos[0], self.goal_pos[1]-1)
 
     def replace_map_values(self, pos, value, goal_pos):
         """
