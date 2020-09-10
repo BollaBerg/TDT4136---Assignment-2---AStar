@@ -191,11 +191,12 @@ class Map_Obj():
         else:
             map[goal_pos[0]][goal_pos[1]] = ' G '
 
-    def show_map(self, map=None):
+    def prepare_map_image(self, map=None):
         """
-        A function used to draw the map as an image and show it.
+        A function used to prepare the map as an image.
+
         :param map: map to use
-        :return: nothing.
+        :return: image.
         """
         # If a map is provided, set the goal and start positions
         if map is not None:
@@ -227,5 +228,30 @@ class Map_Obj():
                     for j in range(scale):
                         pixels[x * scale + i, y * scale + j] = colors[map[y][x]]
         # Show image
+        return image
+
+    def show_map(self, map=None):
+        """
+        A function used to draw the map as an image and show it.
+        
+        :param map: map to use
+        :return: nothing.
+        """
+        image = self.prepare_map_image(map)
         image.show()
+
+    def save_map(self, filename="test", format="jpeg", map=None):
+        """
+        A function used to draw the map as an image and save it.
+
+        :param filename: filename to save as. Defaults to "test"
+        :param format: format to use. Defaults to "jpeg"
+        :param map: map to use
+        :return: nothing.
+        """
+        
+        filename += format
+
+        image = self.prepare_map_image(map)
+        image.save(filename, format=format)
 
