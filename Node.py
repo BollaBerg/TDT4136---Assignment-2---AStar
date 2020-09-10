@@ -1,3 +1,5 @@
+from typing import Tuple, Set
+
 class Node:
     """The Node to be used when traversing the map.
 
@@ -11,35 +13,55 @@ class Node:
         kids         : list of successor node, used to update children
     """
 
-    def __init__(self, position, parent = None, cost_of_step = 1, cost_to_node = 0, cost_to_goal = 0):
+    def __init__(self, position : Tuple[int, int],
+                goal_pos : Tuple[int, int],
+                closed_set : Set,
+                parent = None,
+                cost_of_step = 1,
+                cost_to_node = float("Inf")):
         self.position = position
         self.parent = parent
 
         self.cost_of_step = cost_of_step
         self.cost_to_node = cost_to_node
-        self.cost_to_goal = cost_to_goal
+        self.cost_to_goal = abs(self.position[0] - goal_pos[0]) + abs(self.position[1] - goal_pos[1])
+
+        self.closed_set = closed_set
 
         self.kids = []
 
     def __eq__(self, other):
-        return self.position == other.position
+        return type(self) == type(other) and self.position == other.position
+
+    def __lt__(self, other : 'Node'):
+        return self.cost_to_goal < other.cost_to_goal
+
+    def __hash__(self):
+        return hash(self.position)
+
+    def __str__(self):
+        return F"Node{self.position}: {self.cost_total}"
+
+    def __repr__(self):
+        return str(self)
 
     @property
     def cost_total(self):
         return self.cost_to_node + self.cost_to_goal
 
-    def add_kid(self, kid):
-        self.kids.append(kid)
+    def add_kid(self, kid : 'Node'):
+        if kid not in self.kids:
+            self.kids.append(kid)
 
     def update_kids(self):
-        """Update kids. Should only be called in update_value()!"""
+        """Update kids. Runs update_value for all kids not in closed_set"""
         for kid in self.kids:
-            if kid in closed_set:
+            if kid in self.closed_set:
                 continue
             kid.update_value(self.cost_to_node + kid.cost_of_step, self)
 
 
-    def update_value(self, cost_to_node, parent):
+    def update_value(self, cost_to_node : int, parent : 'Node'):
         """Update values. Should be called when a parent updates
 
         :param cost_to_node: New cost to this node
