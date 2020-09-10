@@ -250,7 +250,7 @@ class Map_Obj():
         :return: nothing.
         """
         
-        filename += format
+        filename = filename + "." + format
 
         image = self.prepare_map_image(map)
         image.save(filename, format=format)
