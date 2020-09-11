@@ -153,24 +153,26 @@ class Map_Obj():
     def tick(self):
         """
         Moves the current goal position every 4th call if current goal position is not already at the end_goal position.
-        :return: current goal position
+        :return: current goal position, boolean showing if goal moved
         """
+        goal_moved = False
         # For every 4th call, actually do something
         if self.tick_counter % 4 == 0:
             # The end_goal_pos is not set
             if self.end_goal_pos is None:
-                return self.goal_pos
+                return self.goal_pos, goal_moved
             # The current goal is at the end_goal
             elif self.end_goal_pos == self.goal_pos:
-                return self.goal_pos
+                return self.goal_pos, goal_moved
             else:
                 # Move current goal position
                 move = self.pick_move()
                 self.move_goal_pos(move)
+                goal_moved = True
                 #print(self.goal_pos)
         self.tick_counter +=1
 
-        return self.goal_pos
+        return self.goal_pos, goal_moved
 
 
     def set_start_pos_str_marker(self, start_pos, map):
