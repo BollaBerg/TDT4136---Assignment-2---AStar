@@ -34,7 +34,7 @@ class Node:
         return type(self) == type(other) and self.position == other.position
 
     def __lt__(self, other : 'Node'):
-        return self.cost_to_goal < other.cost_to_goal
+        return self.cost_total < other.cost_total
 
     def __hash__(self):
         return hash(self.position)
