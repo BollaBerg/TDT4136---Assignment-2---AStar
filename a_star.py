@@ -13,8 +13,7 @@ def a_star(task : int):
     goal_node = Node(goal_pos, goal_pos, closed_set)
 
     # Intialize start_node (the first node) and add it to node_queue
-    start_node = Node(map_obj.get_start_pos(), goal_pos, closed_set)
-    start_node.update_value(0, None)
+    start_node = Node(map_obj.get_start_pos(), goal_pos, closed_set, None, 0, 0)
     node_queue.append(start_node)
 
     while(True):
@@ -27,24 +26,35 @@ def a_star(task : int):
         # Remove current_node from node_queue and add it to closed_set
         current_node = heappop(node_queue)
         closed_set.add(current_node)
-        print(current_node)
 
         # Currently at goal_node ==> Path has been found!
         if current_node == goal_node:
             status = 0
             break
 
-
         # Iterate through neighbors in order to find kids
         for change_in_position in [(-1,0), (1,0), (0,-1), (0,1)]:
             temp_position = tuple(row + col for row, col in zip(current_node.position, change_in_position))
+
+            # Get node cost and check if temp_position is illegal (value = -1), if so --> skip it
+            temp_cost = map_obj.get_cell_value(temp_position)
+            if temp_cost < 1:
+                continue
 
             # Set temp_kid to be a node with position == temp_position
             try:
                 temp_kid = next(kid for kid in node_queue if kid.position == temp_position)
             except StopIteration:
                 # If no existing Node was found above - create new node and add to queue
-                temp_kid = Node(temp_position, goal_pos, closed_set)
+                temp_kid = Node(temp_position, goal_pos, closed_set,
+                                parent=current_node,
+                                cost_of_step=temp_cost,
+                                cost_to_node=current_node.cost_to_node + temp_cost)
+
+                # Ensure the new Node is not in closed set (meaning it has already been visited)
+                if temp_kid in closed_set:
+                    continue
+
                 heappush(node_queue, temp_kid)
 
             current_node.add_kid(temp_kid)
