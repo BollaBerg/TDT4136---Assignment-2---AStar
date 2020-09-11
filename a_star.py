@@ -10,7 +10,7 @@ def a_star(task : int):
 
     # Initialize goal_pos (used when creating nodes later) and goal_node (used to compare nodes later)
     goal_pos = map_obj.get_goal_pos()
-    goal_node = Node(goal_pos, goal_pos, closed_set)
+    goal_node = Node(goal_pos, goal_pos, closed_set, None, map_obj.get_cell_value(goal_pos), float('Inf'))
 
     # Intialize start_node (the first node) and add it to node_queue
     start_node = Node(map_obj.get_start_pos(), goal_pos, closed_set, None, 0, 0)

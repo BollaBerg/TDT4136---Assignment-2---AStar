@@ -16,9 +16,9 @@ class Node:
     def __init__(self, position : Tuple[int, int],
                 goal_pos : Tuple[int, int],
                 closed_set : Set,
-                parent = None,
-                cost_of_step = 1,
-                cost_to_node = float("Inf")):
+                parent : 'Node',
+                cost_of_step : int,
+                cost_to_node : int):
         self.position = position
         self.parent = parent
 
