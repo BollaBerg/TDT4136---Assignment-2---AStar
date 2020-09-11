@@ -55,6 +55,7 @@ def a_star(task : int):
                 if temp_kid in closed_set:
                     continue
 
+                # Node is actually a new node
                 heappush(node_queue, temp_kid)
 
             current_node.add_kid(temp_kid)
