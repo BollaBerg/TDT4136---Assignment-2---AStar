@@ -61,11 +61,13 @@ def a_star(task : int):
 
             current_node.add_kid(temp_kid)
 
+
         # At this point, current_node has NOT been updated, but it does have all its kids.
         # The node will not itself change any values (as no path can be shorter than the current
         # path), but its kids might
         # It is therefore safe to run update_kids()
         current_node.update_kids()
+
 
         # Update goal. tick() is used in task 5 to update goal
         if task == 5:
@@ -81,9 +83,11 @@ def a_star(task : int):
             if current_node.position == tuple(goal_pos):
                 status = 0
                 break
+        # End task 5
 
         # Finalize the loop by heapifying node_queue, in order to ensure correct order
         heapify(node_queue)
+
 
     if status == 404:
         print(value)
@@ -92,12 +96,14 @@ def a_star(task : int):
     # At this point, status should be 0 and current_node == goal_node
     assert(status == 0)
 
+
     # Iterate through path to update the map (to be able to print correctly)
     # Avoid iterating through start_node and end_node (to keep those different colors)
     current_node = current_node.parent
     while(current_node != start_node):
         map_obj.set_cell_value(current_node.position, "o")
         current_node = current_node.parent
+
 
     # Save file at the end
     map_obj.save_map(filename = F"A* - task {task}")

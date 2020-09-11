@@ -25,8 +25,8 @@ class Node:
 
         self.cost_of_step = cost_of_step
         self.cost_to_node = cost_to_node
-
         self.cost_to_goal = abs(self.position[0] - goal_pos[0]) + abs(self.position[1] - goal_pos[1])
+
         if task == 5:
             expected_movement = int(abs(self.position[1] - goal_pos[1]) / 4)
             self.cost_to_goal = abs(self.position[0] - goal_pos[0]) + \
@@ -83,4 +83,5 @@ class Node:
         self.update_kids()
 
     def update_goal(self, goal_pos):
+        """Used in task 5, to update cost_to_goal when the goal moves"""
         self.cost_to_goal = abs(self.position[0] - goal_pos[0]) + abs(self.position[1] - goal_pos[1])
