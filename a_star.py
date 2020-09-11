@@ -10,10 +10,10 @@ def a_star(task : int):
 
     # Initialize goal_pos (used when creating nodes later) and goal_node (used to compare nodes later)
     goal_pos = map_obj.get_goal_pos()
-    goal_node = Node(goal_pos, goal_pos, closed_set, None, map_obj.get_cell_value(goal_pos), float('Inf'))
+    goal_node = Node(goal_pos, goal_pos, closed_set, None, map_obj.get_cell_value(goal_pos), float('Inf'), task)
 
     # Intialize start_node (the first node) and add it to node_queue
-    start_node = Node(map_obj.get_start_pos(), goal_pos, closed_set, None, 0, 0)
+    start_node = Node(map_obj.get_start_pos(), goal_pos, closed_set, None, 0, 0, task)
     node_queue.append(start_node)
 
     while(True):
@@ -49,7 +49,8 @@ def a_star(task : int):
                 temp_kid = Node(temp_position, goal_pos, closed_set,
                                 parent=current_node,
                                 cost_of_step=temp_cost,
-                                cost_to_node=current_node.cost_to_node + temp_cost)
+                                cost_to_node=current_node.cost_to_node + temp_cost,
+                                task=task)
 
                 # Ensure the new Node is not in closed set (meaning it has already been visited)
                 if temp_kid in closed_set:
@@ -65,6 +66,21 @@ def a_star(task : int):
         # path), but its kids might
         # It is therefore safe to run update_kids()
         current_node.update_kids()
+
+        # Update goal. tick() is used in task 5 to update goal
+        if task == 5:
+            goal_pos, goal_moved = map_obj.tick()
+
+            if goal_moved:
+                for node in node_queue:
+                    node.update_goal(goal_pos)
+
+                goal_node.position = goal_pos
+
+            # Edge case where the goal is updated "into" current_node
+            if current_node.position == tuple(goal_pos):
+                status = 0
+                break
 
         # Finalize the loop by heapifying node_queue, in order to ensure correct order
         heapify(node_queue)
