@@ -70,7 +70,7 @@ def a_star(task : int):
         current_node = current_node.parent
 
     # Save file at the end
-    map_obj.save_map()
+    map_obj.save_map(filename = F"A* - task {task}")
 
         
 if __name__ == "__main__":
