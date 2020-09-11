@@ -75,3 +75,6 @@ class Node:
         self.parent = parent
 
         self.update_kids()
+
+    def update_goal(self, goal_pos):
+        self.cost_to_goal = abs(self.position[0] - goal_pos[0]) + abs(self.position[1] - goal_pos[1])
