@@ -76,7 +76,10 @@ def a_star(task : int):
     # At this point, status should be 0 and current_node == goal_node
     assert(status == 0)
 
-    while(current_node != None):
+    # Iterate through path to update the map (to be able to print correctly)
+    # Avoid iterating through start_node and end_node (to keep those different colors)
+    current_node = current_node.parent
+    while(current_node != start_node):
         map_obj.set_cell_value(current_node.position, "o")
         current_node = current_node.parent
 
