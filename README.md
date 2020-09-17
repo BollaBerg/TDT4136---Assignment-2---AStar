@@ -1,5 +1,5 @@
 # TDT4136 - Assignment 1 - A*
-This is my (Andreas Berg's) solution to Assignment 1 in TDT4136 2020.
+This is my (Andreas Berg's) solution to Assignment 1 in TDT4136 fall 2020.
 
 ---
 
@@ -29,12 +29,12 @@ The assignment is as follows:
 
 The assignment to move between different parts of a map (representing Studentersamfundet i Trondhjem). It is split into five separate tasks:
 
-| Task          | Starting position     | Goal position        | Comment |
-| :-----------: | --------------------- | -------------------- | ------- |
-| 1             | Rundhallen (27,18)    | Strossa (40,32)      | Basic A* |
-| 2             | Strossa (40,32)       | Selskapssiden (8,5)  | Basic A* |
-| 3             | Lyche (28,32)         | Klubben (6,32)       | Steps have varying cost |
-| 4             | Lyche (28,32)         | Klubben (6,32)       | Steps have varying cost. Edgar is packed (slow) |
+| Task          | Starting position     | Goal position                          | Comment |
+| :-----------: | --------------------- | -------------------------------------- | ------- |
+| 1             | Rundhallen (27,18)    | Strossa (40,32)                        | Basic A* |
+| 2             | Strossa (40,32)       | Selskapssiden (8,5)                    | Basic A* |
+| 3             | Lyche (28,32)         | Klubben (6,32)                         | Steps have varying cost |
+| 4             | Lyche (28,32)         | Klubben (6,32)                         | Steps have varying cost. Edgar is packed (slow) |
 | 5 (optional)  | Rytterhallen (14,18)  | Klubben (6,36) --> Selskapssiden (6,7) | Steps have varying cost. The goal moves 1/4 step every iteration of the algorithm |
 
 All tasks come with a CSV-file representing tiles. These can be found in `./maps`
@@ -52,16 +52,16 @@ Color guide:
 | ![Gray 2](https://via.placeholder.com/15/A6A6A6/000000?text=+) ![Gray 3](https://via.placeholder.com/15/606060/000000?text=+) ![Gray 4](https://via.placeholder.com/15/242424/000000?text=+) Gray (task 3-5) | The darker the tile, the more expensive the tile is |
 
 ### Task 1
-
+![Task 1](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/A*%20-%20task%201.jpeg)
 
 ### Task 2
-
+![Task 2](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/A*%20-%20task%202.jpeg)
 
 ### Task 3
-
+![Task 3](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/A*%20-%20task%203.jpeg)
 
 ### Task 4
-
+![Task 4](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/A*%20-%20task%204.jpeg)
 
 ### Task 5
-
+![Task 5](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/A*%20-%20task%205.jpeg)
