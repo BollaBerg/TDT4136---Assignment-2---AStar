@@ -9,7 +9,7 @@ This is my (Andreas Berg's) solution to Assignment 1 in TDT4136 fall 2020.
 ```bash
 pip install -r requirements.txt
 ```
-3a) To solve all tasks, simply run the code. This will save all solutions as separate images titled `Astar - task i.jpeg` where i = task number.
+3a) To solve all tasks, simply run the code. This will save all solutions as separate images in `results/` titled `Astar - task i.jpeg`, where i = task number.
 ```bash
 python main.py
 ```
