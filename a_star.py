@@ -106,7 +106,7 @@ def a_star(task : int):
 
 
     # Save file at the end
-    map_obj.save_map(filename = F"A* - task {task}")
+    map_obj.save_map(filename = F"results/A* - task {task}")
 
         
 if __name__ == "__main__":
