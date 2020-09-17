@@ -16,7 +16,7 @@ python main.py
 
 3b) To solve only some tasks, simply edit `main.py` to solve only some tasks, or have the following in your own python file:
 ```python
-from a_star import a_star
+from src.a_star import a_star
 
 a_star(i)   # Solve task i
 ```

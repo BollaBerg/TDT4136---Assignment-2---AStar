@@ -1,7 +1,7 @@
 from heapq import heapify, heappush, heappop
 
-from Map import Map_Obj
-from Node import Node
+from src.Map import Map_Obj
+from src.Node import Node
 
 def a_star(task : int):
     map_obj = Map_Obj(task)
