@@ -27,7 +27,7 @@ a_star(i)   # Solve task i
 The assignment is as follows:
 > In this assignment, you will become familiar with the A* algorithm by applying it to a classical use case for A*, namely that of finding the shortest path in a two-dimensional grid-like world.
 
-The assignment to move between different parts of a map (representing Studentersamfundet i Trondhjem). It is split into five separate tasks:
+The assignment to find a path between different points on a map (representing Studentersamfundet i Trondhjem). It is split into five separate tasks:
 
 | Task          | Starting position     | Goal position                          | Comment |
 | :-----------: | --------------------- | -------------------------------------- | ------- |
@@ -37,7 +37,7 @@ The assignment to move between different parts of a map (representing Studenters
 | 4             | Lyche (28,32)         | Klubben (6,32)                         | Steps have varying cost. Edgar is packed (slow) |
 | 5 (optional)  | Rytterhallen (14,18)  | Klubben (6,36) --> Selskapssiden (6,7) | Steps have varying cost. The goal moves 1/4 step every iteration of the algorithm |
 
-All tasks come with a CSV-file representing tiles. These can be found in `./maps`
+All tasks come with a CSV-file representing tiles. These can be found in `maps/`
 
 ## Results
 Color guide:
