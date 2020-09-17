@@ -64,4 +64,5 @@ Color guide:
 ![Task 4](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/A*%20-%20task%204.jpeg)
 
 ### Task 5
+Note: The goal indicated is the final goal, meaning the place where the goal ended up. It has moved, I promise!
 ![Task 5](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/A*%20-%20task%205.jpeg)
