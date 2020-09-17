@@ -52,17 +52,17 @@ Color guide:
 | ![Gray 2](https://via.placeholder.com/15/A6A6A6/000000?text=+) ![Gray 3](https://via.placeholder.com/15/606060/000000?text=+) ![Gray 4](https://via.placeholder.com/15/242424/000000?text=+) Gray (task 3-5) | The darker the tile, the more expensive the tile is |
 
 ### Task 1
-![Task 1](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/A*%20-%20task%201.jpeg)
+![Task 1](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/Astar%20-%20task%201.jpeg)
 
 ### Task 2
-![Task 2](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/A*%20-%20task%202.jpeg)
+![Task 2](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/Astar%20-%20task%202.jpeg)
 
 ### Task 3
-![Task 3](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/A*%20-%20task%203.jpeg)
+![Task 3](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/Astar%20-%20task%203.jpeg)
 
 ### Task 4
-![Task 4](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/A*%20-%20task%204.jpeg)
+![Task 4](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/Astar%20-%20task%204.jpeg)
 
 ### Task 5
 Note: The goal indicated is the final goal, meaning the place where the goal ended up. It has moved, I promise!
-![Task 5](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/A*%20-%20task%205.jpeg)
+![Task 5](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar/blob/master/results/Astar%20-%20task%205.jpeg)
