@@ -26,8 +26,9 @@ class Node:
         self.cost_of_step = cost_of_step
         self.cost_to_node = cost_to_node
         self.cost_to_goal = abs(self.position[0] - goal_pos[0]) + abs(self.position[1] - goal_pos[1])
+            # Using Manhattan distance
 
-        if task == 5:
+        if task == 5: # To try to deal with a moving goal
             expected_movement = int(abs(self.position[1] - goal_pos[1]) / 4)
             self.cost_to_goal = abs(self.position[0] - goal_pos[0]) + \
                                 abs(self.position[1] - goal_pos[1] - expected_movement)
@@ -75,6 +76,7 @@ class Node:
         :returns: nothing.
         """
         if cost_to_node >= self.cost_to_node:
+            # The new path is longer => Don't update
             return
         
         self.cost_to_node = cost_to_node

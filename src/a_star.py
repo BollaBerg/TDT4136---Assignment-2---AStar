@@ -43,6 +43,7 @@ def a_star(task : int):
 
             # Set temp_kid to be a node with position == temp_position
             try:
+                # See if there exists a node with this position in node_queue
                 temp_kid = next(kid for kid in node_queue if kid.position == temp_position)
             except StopIteration:
                 # If no existing Node was found above - create new node and add to queue
@@ -56,9 +57,10 @@ def a_star(task : int):
                 if temp_kid in closed_set:
                     continue
 
-                # Node is actually a new node
+                # Kid is actually a new node - add it to node_queue
                 heappush(node_queue, temp_kid)
 
+            # Add the kid to current_node's kids
             current_node.add_kid(temp_kid)
 
 
